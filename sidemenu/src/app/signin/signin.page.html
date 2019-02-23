@@ -18,9 +18,6 @@
      <ion-input type="password"></ion-input>
     </ion-item>
   </ion-list>
-  <ion-button id='btn-signin' ion-button large (tap)="signup()">CONNEXION</ion-button>
-  <ion-button ion-button [routerLink]="['/signup']" routerLinkActive="router-link-active"
-    color="secondary" clear>
-    Inscription
-  </ion-button>
+  <ion-button class='btn' ion-button large>CONNEXION</ion-button>
+  <ion-button class='btn' ion-button large [routerLink]="['/signup']" routerLinkActive="router-link-active" color="secondary"> INSCRIPTION</ion-button>
  </ion-content>

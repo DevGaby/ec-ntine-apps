@@ -1,26 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ManagementPage } from './management.page';
+import { MenumanagerPage } from './menumanager/menumanager.page';
 
-const routes: Routes = [
-  {
-    path: '',
-    component: ManagementPage
-  }
-];
+// import { ManagementPage } from './management.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild([
+      {
+        path: '',
+        component: MenumanagerPage
+      }
+    ])
   ],
-  declarations: [ManagementPage]
+  declarations: [
+    MenumanagerPage,
+  ]
 })
 export class ManagementPageModule {}

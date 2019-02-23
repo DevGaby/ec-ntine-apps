@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item [routerLink]="['/management']" router-link-active="router-link-active"> 
+      <ion-icon slot="start" color="medium" name="arrow-round-back"></ion-icon>
+    </ion-item>
+    <ion-title>Cagnotte</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-searchbar (ionInput)="getUsers($event)"></ion-searchbar>
+    <ion-list>
+      <ion-item *ngFor="let user of users">
+        {{ user }}
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Montant</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button class='btn' ion-button large color="danger">DEBITER</ion-button>
+    <ion-button class='btn' ion-button large color="warning">CREDITER</ion-button>
+</ion-content>

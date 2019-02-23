@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item [routerLink]="['/management']" router-link-active="router-link-active"> 
+      <ion-icon slot="start" color="medium" name="arrow-round-back"></ion-icon>
+    </ion-item>   
+    <ion-title>Commandes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h4>Liste des commandes par categories</h4>
+  <ion-list>
+      <ion-segment [(ngModel)]="choix">
+        <ion-segment-button class="btn-seg" value="Entree">
+          Entrées
+        </ion-segment-button>
+        <ion-segment-button  class="btn-seg" value="Plat">
+          Plats
+        </ion-segment-button>
+        <ion-segment-button  class="btn-seg" value="Dessert">
+          Desserts
+        </ion-segment-button>
+      </ion-segment>
+        <div [ngSwitch]="choix">
+        <ion-list *ngSwitchCase="'Plat'">
+          <ion-item>
+            Marie - Lasagne
+          </ion-item>
+          <ion-item>
+              Sofia - Lasagne
+            </ion-item>
+          <ion-item>
+            Pierre - Risotto
+          </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'Entree'">
+          <ion-item>
+            Sofia - Salade
+          </ion-item>
+          <ion-item>
+            Lee - Samoussa
+          </ion-item>
+        </ion-list>
+        <ion-list *ngSwitchCase="'Dessert'">
+          <ion-item>
+            Karim - Tarte
+            <!-- <button class='btn-plus' > - <button> -->
+          </ion-item>
+          <ion-item>
+            Luther - Fruit
+          </ion-item>
+          <ion-item>
+              Luther - Tarte
+            </ion-item>
+          </ion-list>
+        </div>
+  </ion-list>
+</ion-content>

@@ -30,11 +30,29 @@ const routes: Routes = [
     path: 'shoppingcart',
     loadChildren: './shoppingcart/shoppingcart.module#ShoppingcartPageModule'
   },
-  { path: 'management',
+  {
+    path: 'management',
     loadChildren: './management/management.module#ManagementPageModule'
   },
-  { path: 'signout',
+  {
+    path: 'signout',
     loadChildren: './signout/signout.module#SignoutPageModule'
+  },
+  {
+    path: 'createarticle',
+    loadChildren: './management/createarticle/createarticle.module#CreatearticlePageModule'
+  },
+  {
+    path: 'createmenu',
+    loadChildren: './management/createmenu/createmenu.module#CreatemenuPageModule'
+  },
+  {
+    path: 'managementfund',
+    loadChildren: './management/managementfund/managementfund.module#ManagementfundPageModule'
+  },
+  {
+    path: 'managementcommand',
+    loadChildren: './management/managementcommand/managementcommand.module#ManagementcommandPageModule'
   },
 ];
 

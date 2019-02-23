@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item [routerLink]="['/management']" router-link-active="router-link-active"> 
+      <ion-icon slot="start" color="medium" name="arrow-round-back"></ion-icon>
+    </ion-item>
+    <ion-title>Créer un article</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label stacked> Nom de l'article</ion-label>
+      <ion-input type=text></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Categorie</ion-label>
+      <ion-select placeholder="Categorie">
+        <ion-select-option value="entree">Entree</ion-select-option>
+        <ion-select-option value="plat">Plat</ion-select-option>
+        <ion-select-option value="dessert">Dessert</ion-select-option>
+        <ion-select-option value="boisson">Boisson</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label stacked> Prix de l'article</ion-label>
+        <ion-input type=text></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-textarea placeholder="Description..."></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-button class='btn' ion-button large>CREER</ion-button>
+</ion-content>

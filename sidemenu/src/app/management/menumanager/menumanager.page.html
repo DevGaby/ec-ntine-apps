@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Menu Cantinière</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<p> Bienvenue dans votre interface de gestion de la cantiniere</p>
+
+<ion-content padding>
+  <ion-button class='btn' ion-button large [routerLink]="['/createarticle']" >CREER UN ARTICLE</ion-button>
+  <ion-button class='btn' ion-button large [routerLink]="['/createmenu']">CREER UN MENU</ion-button>
+  <ion-button class='btn' ion-button large [routerLink]="['/managementfund']">GESTION CAGNOTTE</ion-button>
+  <ion-button class='btn' ion-button large [routerLink]="['/managementcommand']">LISTE COMMANDE</ion-button>
+</ion-content>
+
+<!-- Test -->
+<ion-content>
+<ion-toolbar>
+  <button ion-button menuToggle right>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>
+    Title
+  </ion-title>
+  <ion-buttons end>
+    <button ion-button (click)="doClick()">
+      <ion-icon name="more"></ion-icon>
+    </button>
+  </ion-buttons>
+</ion-toolbar>
+</ion-content>
+<!-- <div padding>
+    <ion-segment [(ngModel)]="choix">
+      <ion-segment-button value="Création">
+        Création
+      </ion-segment-button>
+      <ion-segment-button value="Cagnotte">
+        Cagnotte
+      </ion-segment-button>
+      <ion-segment-button value="Commande">
+        Commande
+      </ion-segment-button>
+    </ion-segment>
+    </div> -->
+</ion-content>
