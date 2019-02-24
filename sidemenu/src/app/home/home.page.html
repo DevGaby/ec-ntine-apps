@@ -1,3 +1,7 @@
+<!-- A FAIRE
+  -- Rendre affichage de l'image et le nom du plat du jour dynamique
+  -- Améliorer la couleur des bouton reseaux sociaux
+ -->
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -9,81 +13,138 @@
 
 <ion-content>
   <ion-card class="welcome-card">
-    <ion-card-header>
-      <ion-card-title>Aujourd'hui</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
+    <ion-card-content class="title">
+      <ion-card-title >Aujourd'hui</ion-card-title>
       <ion-img src="/assets/Lasagnes.jpg"></ion-img>
-      <ion-item>Lasagne a la bolognaise </ion-item>
+      <ion-label>Lasagne a la bolognaise </ion-label>
     </ion-card-content>
   </ion-card>
-  <ion-card>
-    <ion-segment [(ngModel)]="choix">
-      <ion-segment-button value="Entree">
-        Entrées
-      </ion-segment-button>
-      <ion-segment-button value="Plat">
-        Plats
-      </ion-segment-button>
-      <ion-segment-button value="Dessert">
-        Desserts
-      </ion-segment-button>
-    </ion-segment>
-      <!-- </div> -->
-      <div [ngSwitch]="choix">
-        <ion-list *ngSwitchCase="'Plat'">
-          <ion-item>
-            <ion-thumbnail item-start>
-              <img src="assets/Pot-au-feu.jpg">
-            </ion-thumbnail>
-            <ion-label>Pot au feu</ion-label>
-              <!-- <button class='btn-plus' ion-button >Ajouter<button> -->
-          </ion-item>
+  
+  <div class="menuExpress">
+    <ion-col>
+      <ion-segment [(ngModel)]="choix">
+        <ion-segment-button value="Entree">
+            Entrées
+          </ion-segment-button>
+          <ion-segment-button value="Plat">
+            Plats
+          </ion-segment-button>
+          <ion-segment-button value="Dessert">
+            Desserts
+          </ion-segment-button>
+      </ion-segment>
 
-          <ion-item>
-            <ion-thumbnail item-start>
-              <img src="assets/Risotto.jpg">
-            </ion-thumbnail>
-            <h6>Rissotto saumon</h6>
-            <!-- <ion-button class='btn-plus' ion-button >Ajouter<ion-button> -->
-          </ion-item>
-        </ion-list>
-        <ion-list *ngSwitchCase="'Entree'">
-          <ion-item>
-            <ion-thumbnail item-start>
-              <img src="assets/Samoussa.jpg">
-            </ion-thumbnail>
-            <h6>Samoussa</h6>
-            <!-- <ion-button class='btn-plus' ion-button >Ajouter<ion-button> -->
-          </ion-item>
-          <ion-item>
-            <ion-thumbnail item-start>
-              <img src="assets/entree-1.jpg">
-            </ion-thumbnail>
-            <h6>Petite salade</h6>
-            <!-- <ion-button class='btn-plus' ion-button >Ajouter<ion-button> -->
-            </ion-item>
-          </ion-list>
-          <ion-list *ngSwitchCase="'Dessert'">
-            <ion-item>
-              <ion-thumbnail item-start>
-                <img src="assets/tartelette.jpg">
-              </ion-thumbnail>
-              <h6>Tartelette du jour :</h6>
-              <!-- <ion-button class='btn-plus' ion-button >Ajouter<ion-button> -->
-            </ion-item>
-            <ion-item>
-              <ion-thumbnail item-start>
-                <img src="assets/fruit.jpeg">
-              </ion-thumbnail>
-              <h6>Fruits du jour :</h6>
-              <!-- <ion-button class='btn-plus' ion-button >Ajouter<ion-button> -->
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="row">
+          <div [ngSwitch]="choix">
+
+            <ion-list *ngSwitchCase="'Entree'">
+              <ion-item *ngFor="let art of articles">
+                <ion-grid>
+                  <ion-row>
+                    <ion-thumbnail item-start>
+                      <img src="assets/Samoussa.jpg">
+                    </ion-thumbnail>
+                    <ion-col> {{art.libelle}} - {{art.price}}€</ion-col> 
+                    <ion-col><ion-button class="btn-art" color="warning">+</ion-button></ion-col>
+                    <!-- <ion-col> {{art.category}}</ion-col>  -->
+                  </ion-row>
+                </ion-grid>
               </ion-item>
-          </ion-list>
-        </div>
-      <!-- </div> -->
-    </ion-card>
-    <ion-list lines="none">
+
+              <!-- <ion-item>
+                <ion-grid>
+                  <ion-row>
+                    <ion-thumbnail item-start>
+                      <img src="assets/entree-1.jpg">
+                    </ion-thumbnail>
+                    <ion-col>Nom & prix</ion-col> 
+                    <ion-col><ion-button color="warning">+</ion-button></ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-item> -->
+            </ion-list>
+                
+            <ion-list *ngSwitchCase="'Plat'">
+                <ion-item>
+                    <ion-grid>
+                      <ion-row>
+                        <ion-thumbnail item-start>
+                          <img src="assets/entree-1.jpg">
+                        </ion-thumbnail>
+                        <ion-col>Nom & prix</ion-col> 
+                        <ion-col><ion-button color="warning">+</ion-button></ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-item>
+
+                  <ion-item>
+                      <ion-grid>
+                        <ion-row>
+                          <ion-thumbnail item-start>
+                            <img src="assets/entree-1.jpg">
+                          </ion-thumbnail>
+                          <ion-col>Nom & prix</ion-col> 
+                          <ion-col><ion-button color="warning">+</ion-button></ion-col>
+                        </ion-row>
+                      </ion-grid>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-grid>
+                          <ion-row>
+                            <ion-thumbnail item-start>
+                              <img src="assets/entree-1.jpg">
+                            </ion-thumbnail>
+                            <ion-col>Nom & prix</ion-col> 
+                            <ion-col><ion-button color="warning">+</ion-button></ion-col>
+                          </ion-row>
+                        </ion-grid>
+                      </ion-item>
+              </ion-list>
+
+            <ion-list *ngSwitchCase="'Dessert'">
+                <ion-item>
+                    <ion-grid>
+                      <ion-row>
+                        <ion-thumbnail item-start>
+                          <img src="assets/entree-1.jpg">
+                        </ion-thumbnail>
+                        <ion-col>Nom & prix</ion-col> 
+                        <ion-col><ion-button color="warning">+</ion-button></ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-item>
+
+                  <ion-item>
+                      <ion-grid>
+                        <ion-row>
+                          <ion-thumbnail item-start>
+                            <img src="assets/entree-1.jpg">
+                          </ion-thumbnail>
+                          <ion-col>Nom & prix</ion-col> 
+                          <ion-col><ion-button color="warning">+</ion-button></ion-col>
+                        </ion-row>
+                      </ion-grid>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-grid>
+                          <ion-row>
+                            <ion-thumbnail item-start>
+                              <img src="assets/entree-1.jpg">
+                            </ion-thumbnail>
+                            <ion-col>Nom & prix</ion-col> 
+                            <ion-col><ion-button color="warning">+</ion-button></ion-col>
+                          </ion-row>
+                        </ion-grid>
+                      </ion-item>
+            </ion-list>
+          </div> <!-- Fin [ngSwitch] -->
+      </form>
+    </ion-col>
+  </div> <!-- Fin /menuExpress -->
+
+  <ion-list lines="none">
       <ion-list-header>
         <ion-label></ion-label>
       </ion-list-header>
@@ -101,11 +162,10 @@
       </ion-item>
     </ion-list>
     <ion-card>
-      <ion-item> 
-        <ion-icon slot="start" color="medium" name="logo-facebook"></ion-icon>
-        <ion-icon slot="start" color="medium" name="logo-instagram"></ion-icon>
-        <ion-icon slot="start" color="medium" name="logo-twitter"></ion-icon>
-        <ion-label> Suivez nous</ion-label>
-      </ion-item>
+      <ion-item class="socialMedia"> 
+        <ion-icon class="facebook" slot="start" color="medium" name="logo-facebook"></ion-icon>
+        <ion-icon class="instagram" slot="start" color="medium" name="logo-instagram"></ion-icon>
+        <ion-icon class="twitter" slot="start" color="medium" name="logo-twitter"></ion-icon>
+      </ion-item>      
     </ion-card>
 </ion-content>

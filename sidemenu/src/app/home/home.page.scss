@@ -1,4 +1,30 @@
 .welcome-card ion-img {
-  max-height: 35vh;
+  // max-height: 35vh;
   overflow: hidden;
 }
+
+.btn-art{
+  border-radius: 100px;
+}
+
+ .socialMedia ion-icon {
+   border-radius: 100%;
+   font-size: 30px;
+  }
+
+.socialMedia {
+  align-items: center;
+}
+.twitter {
+  background: #00acee;
+  }
+
+.facebook {
+  background: #3b5998;
+}
+.instagram {
+  background: #8a3ab9,
+}
+
+
+
