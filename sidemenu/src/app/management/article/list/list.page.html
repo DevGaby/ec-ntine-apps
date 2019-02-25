@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Tous les articles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ion-searchbar (ionInput)="showArticle($event)"></ion-searchbar>
+    <ion-item *ngFor="let art of articles; let i=index">
+        <ion-col> {{art.libelle | lowercase}} </ion-col> 
+        <ion-col> {{art.price}}€</ion-col> 
+        <!-- <ion-col> {{art._id}}</ion-col> -->
+        <ion-col><ion-button [routerLink]="['/detailarticle/i']" routerLinkActive="router-link-active">Détail</ion-button></ion-col>
+        <ion-col><ion-button color="warning" (click)="onAddBasket(i)">+</ion-button></ion-col>
+    </ion-item>
+  </ion-list>
+</ion-content>

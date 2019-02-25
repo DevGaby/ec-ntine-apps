@@ -40,20 +40,24 @@ export class ArticleService {
   }
 
   addArticle(article: any) {
-    const body = {
-      libelle : article.libelle,
-      description : article.description,
-      price : parseInt(article.price),
-      category : article.category,
-    }
-    return this.http.post(this.url, body, this.httpOptions );
+    // Transforme le js en JSON
+    // let body = JSON.stringify(article);
+    // {
+    //   libelle : article['libelle'],
+    //   description : article['description'],
+    //   price : article['price'],
+    //   category : article['category'],
+    // };
+    // console.log(body);
+    console.log(article);
+    return this.http.post(this.url, article);
   }
 
   updateArticle(article: any, id: String) {
     const body = {
       libelle : article.libelle,
       description : article.description,
-      price : parseInt(article.price) ,
+      price : article.price ,
       category : article.category,
     }
     return this.http.put(this.url + '/' + id, body, this.httpOptions );

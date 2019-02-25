@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MenumanagerPage } from './menumanager/menumanager.page';
+import { MenumanagerPage } from './cantiniere/menumanager/menumanager.page';
 
 // import { ManagementPage } from './management.page';
 

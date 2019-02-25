@@ -19,10 +19,6 @@ const routes: Routes = [
     loadChildren: './signup/signup.module#SignupPageModule'
   },
   {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
-  },
-  {
     path: 'profil',
     loadChildren: './profil/profil.module#ProfilPageModule'
   },
@@ -39,20 +35,36 @@ const routes: Routes = [
     loadChildren: './signout/signout.module#SignoutPageModule'
   },
   {
-    path: 'createarticle',
-    loadChildren: './management/createarticle/createarticle.module#CreatearticlePageModule'
-  },
-  {
-    path: 'createmenu',
-    loadChildren: './management/createmenu/createmenu.module#CreatemenuPageModule'
-  },
-  {
     path: 'managementfund',
-    loadChildren: './management/managementfund/managementfund.module#ManagementfundPageModule'
+    loadChildren: './management/cantiniere/managementfund/managementfund.module#ManagementfundPageModule'
   },
   {
     path: 'managementcommand',
-    loadChildren: './management/managementcommand/managementcommand.module#ManagementcommandPageModule'
+    loadChildren: './management/cantiniere/managementcommand/managementcommand.module#ManagementcommandPageModule'
+  },
+  {
+    path: 'createarticle',
+    loadChildren: './management/article/createarticle/createarticle.module#CreatearticlePageModule'
+  },
+  {
+    path: 'deletearticle/:id',
+    loadChildren: './management/article/deletearticle/deletearticle.module#DeletearticlePageModule'
+  },
+  {
+    path: 'editarticle/:id',
+    loadChildren: './management/article/editarticle/editarticle.module#EditarticlePageModule'
+  },
+  {
+    path: 'detailarticle/:id',
+    loadChildren: './management/article/detailarticle/detailarticle.module#DetailarticlePageModule'
+  },
+  {
+    path: 'list',
+    loadChildren: './management/article/list/list.module#ListPageModule'
+  },
+  {
+    path: 'createmenu',
+    loadChildren: './management/menu/createmenu/createmenu.module#CreatemenuPageModule'
   },
 ];
 

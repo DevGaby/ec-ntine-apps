@@ -36,7 +36,6 @@
 
       <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="row">
           <div [ngSwitch]="choix">
-
             <ion-list *ngSwitchCase="'Entree'">
               <ion-item *ngFor="let art of articles">
                 <ion-grid>
@@ -44,100 +43,45 @@
                     <ion-thumbnail item-start>
                       <img src="assets/Samoussa.jpg">
                     </ion-thumbnail>
-                    <ion-col> {{art.libelle}} - {{art.price}}€</ion-col> 
-                    <ion-col><ion-button class="btn-art" color="warning">+</ion-button></ion-col>
+                    <ion-col> {{art.libelle}} </ion-col> 
+                    <ion-col> {{art.price}}€</ion-col>
+                    <ion-col class="col-3"><ion-button class="btn-art" color="warning">+</ion-button></ion-col>
                     <!-- <ion-col> {{art.category}}</ion-col>  -->
                   </ion-row>
                 </ion-grid>
               </ion-item>
-
-              <!-- <ion-item>
-                <ion-grid>
-                  <ion-row>
-                    <ion-thumbnail item-start>
-                      <img src="assets/entree-1.jpg">
-                    </ion-thumbnail>
-                    <ion-col>Nom & prix</ion-col> 
-                    <ion-col><ion-button color="warning">+</ion-button></ion-col>
-                  </ion-row>
-                </ion-grid>
-              </ion-item> -->
             </ion-list>
                 
             <ion-list *ngSwitchCase="'Plat'">
-                <ion-item>
-                    <ion-grid>
-                      <ion-row>
-                        <ion-thumbnail item-start>
-                          <img src="assets/entree-1.jpg">
-                        </ion-thumbnail>
-                        <ion-col>Nom & prix</ion-col> 
-                        <ion-col><ion-button color="warning">+</ion-button></ion-col>
-                      </ion-row>
-                    </ion-grid>
-                  </ion-item>
+              <ion-item *ngFor="let art of articles">
+                  <ion-grid>
+                    <ion-row>
+                      <ion-thumbnail item-start>
+                        <img src="assets/Risotto.jpg">
+                      </ion-thumbnail>
+                      <ion-col> {{art.libelle}} </ion-col> 
+                      <ion-col> {{art.price}}€</ion-col>
+                      <ion-col class="col-3"><ion-button class="btn-art" color="warning">+</ion-button></ion-col>
+                      <!-- <ion-col> {{art.category}}</ion-col>  -->
+                    </ion-row>
+                  </ion-grid>
+              </ion-item>
+          </ion-list>
 
-                  <ion-item>
-                      <ion-grid>
-                        <ion-row>
-                          <ion-thumbnail item-start>
-                            <img src="assets/entree-1.jpg">
-                          </ion-thumbnail>
-                          <ion-col>Nom & prix</ion-col> 
-                          <ion-col><ion-button color="warning">+</ion-button></ion-col>
-                        </ion-row>
-                      </ion-grid>
-                    </ion-item>
-
-                    <ion-item>
-                        <ion-grid>
-                          <ion-row>
-                            <ion-thumbnail item-start>
-                              <img src="assets/entree-1.jpg">
-                            </ion-thumbnail>
-                            <ion-col>Nom & prix</ion-col> 
-                            <ion-col><ion-button color="warning">+</ion-button></ion-col>
-                          </ion-row>
-                        </ion-grid>
-                      </ion-item>
-              </ion-list>
-
-            <ion-list *ngSwitchCase="'Dessert'">
-                <ion-item>
-                    <ion-grid>
-                      <ion-row>
-                        <ion-thumbnail item-start>
-                          <img src="assets/entree-1.jpg">
-                        </ion-thumbnail>
-                        <ion-col>Nom & prix</ion-col> 
-                        <ion-col><ion-button color="warning">+</ion-button></ion-col>
-                      </ion-row>
-                    </ion-grid>
-                  </ion-item>
-
-                  <ion-item>
-                      <ion-grid>
-                        <ion-row>
-                          <ion-thumbnail item-start>
-                            <img src="assets/entree-1.jpg">
-                          </ion-thumbnail>
-                          <ion-col>Nom & prix</ion-col> 
-                          <ion-col><ion-button color="warning">+</ion-button></ion-col>
-                        </ion-row>
-                      </ion-grid>
-                    </ion-item>
-
-                    <ion-item>
-                        <ion-grid>
-                          <ion-row>
-                            <ion-thumbnail item-start>
-                              <img src="assets/entree-1.jpg">
-                            </ion-thumbnail>
-                            <ion-col>Nom & prix</ion-col> 
-                            <ion-col><ion-button color="warning">+</ion-button></ion-col>
-                          </ion-row>
-                        </ion-grid>
-                      </ion-item>
+          <ion-list *ngSwitchCase="'Dessert'">
+              <ion-item *ngFor="let art of articles">
+                  <ion-grid>
+                    <ion-row>
+                      <ion-thumbnail item-start>
+                        <img src="assets/tartelette.jpg">
+                      </ion-thumbnail>
+                      <ion-col> {{art.libelle | lowercase}} </ion-col> 
+                      <ion-col> {{art.price}}€</ion-col>
+                      <ion-col class="col-3"><ion-button class="btn-art" color="warning">+</ion-button></ion-col>
+                      <!-- <ion-col> {{art.category}}</ion-col>  -->
+                    </ion-row>
+                  </ion-grid>
+                </ion-item>
             </ion-list>
           </div> <!-- Fin [ngSwitch] -->
       </form>
@@ -169,3 +113,9 @@
       </ion-item>      
     </ion-card>
 </ion-content>
+
+ <!--
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+  -->

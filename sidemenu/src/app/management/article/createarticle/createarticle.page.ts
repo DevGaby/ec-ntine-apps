@@ -16,7 +16,7 @@ declare var require: any;
 })
 export class CreatearticlePage implements OnInit {
 
-  articles: Article;
+  articles: Article = null;
   constructor(private rest: ArticleService, private router: Router) { }
 
   ngOnInit() {
@@ -43,14 +43,11 @@ export class CreatearticlePage implements OnInit {
   // }
 
   newArticle(value: any) {
-    let art = new Article;
-    art = value;
-    console.log(art);
-     this.rest.addArticle(art)
+     this.rest.addArticle(value)
       .subscribe(data => {
         this.getArticles();
         console.log('ok');
-        this.router.navigate([`./home`]);
+        this.router.navigate([`./list`]);
       }, (err) => {
         console.log(err);
       });
